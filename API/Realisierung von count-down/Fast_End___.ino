@@ -17,8 +17,9 @@ int prebuttonState = 0;
 
 unsigned long minutes = 60000;
 
-void setup()   {                
- // initialize the digital pin as an output:
+void setup()   
+{                
+ 
  lcd.clear();
  Serial.begin(9600);
   lcd.begin(16, 2);
@@ -49,7 +50,8 @@ void setup()   {
 }
 
 void loop() {
-    if (millis() < minutes * 1) {
+    if (millis() < minutes * 1) 
+{
 
 lcd.setCursor(0, 0);
  lcd.print("Dance! xwyz!");
@@ -61,23 +63,30 @@ lcd.setCursor(0, 0);
  unsigned long time = millis();
 
  
-  while( millis()-time < 300){ 
+  while( millis()-time < 300)
+{ 
     
-   buttonState= digitalRead(A+4);
+  buttonState= digitalRead(A+4);
   if(buttonState != prebuttonState)
-   {if (buttonState == LOW){
+  {
+    if (buttonState == LOW)
+   {
     count=count+1;    
     lcd.setCursor(6, 1);
- lcd.print(count);
-    }}       prebuttonState= buttonState;   }            
-
-digitalWrite(A,LOW);
- delay(10);     
+    lcd.print(count);
+   }
+  }       
+    prebuttonState= buttonState;   
+ }            
+ 
+   digitalWrite(A,LOW);
+   delay(10);     
 }
-else {    
-   lcd.setCursor(0, 0);
- lcd.print("Your Score is:");
+else 
+{    
+  lcd.setCursor(0, 0);
+  lcd.print("Your Score is:");
   lcd.setCursor(6, 1);
- lcd.print(count);
+  lcd.print(count);
  }
 }
