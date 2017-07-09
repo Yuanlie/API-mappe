@@ -1,5 +1,5 @@
 int Potpin = A4;
-float r = 220.0 ;
+float r = 200.0 ;
 float Value,R;
 
 void setup()   
