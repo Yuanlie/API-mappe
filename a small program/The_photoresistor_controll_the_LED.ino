@@ -1,4 +1,4 @@
-int photocellPin = 8; 
+int photocellPin = A2; 
 int photocellVal = 0; 
 int minLight = 200;   
 int ledPin = 4;
