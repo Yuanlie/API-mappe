@@ -50,7 +50,7 @@ void setup()
 }
 
 void loop() {
-    if (millis() < minutes * 1) 
+    if (millis() < minutes) 
 {
 
 lcd.setCursor(0, 0);
