@@ -1,8 +1,7 @@
-int photocellPin = A2; 
-int photocellVal = 0; 
+int photoResistor = A2; 
+int value = 0; 
 int minLight = 200;   
-int ledPin = 4;
-int ledState = 0; 
+int ledPin = 4; 
  
 void setup() {
   pinMode(ledPin, OUTPUT); 
@@ -12,19 +11,19 @@ void setup() {
 void loop() {
   if (millis()<60000)
 {
-  photocellVal = analogRead(photocellPin);
-  Serial.println(photocellVal);   
+  vlaue = analogRead(photoResistor);
+  Serial.println(value);   
    
  
-  if (photocellVal < minLight && ledState == 0) {
+  if (photocellVal < minLight ) {
     digitalWrite(ledPin, HIGH);
-    ledState = 1;
+
   }
    
   
-  if (photocellVal > minLight && ledState == 1) {
+  else  {
     digitalWrite(ledPin, LOW); 
-    ledState = 0;
+ 
   }  
    
   delay(100);       
