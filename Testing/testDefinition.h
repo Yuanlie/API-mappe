@@ -4,51 +4,31 @@
 #ifdef TEST
 
 #include "test.h"
-#include "registration.h"
 
 
 
+void test()
+{
+    
+    double timing;//Diese Zeit ist der Wert von Funktion millis() beim Stoppen des Programm.
+    double time = 60000;//Diese 60000ms ist der Zwerk,dass millis() beim Stoppen des Programm wirklich 60000ms läuft.
 
-void testAnmeldung(){ // Name frei waehlbar
-    // Funktion muss in der Funktion runTests() aufgerufen werden
-    // siehe weiter unten
     
     bool testResult = false;
-    
-    // Der folgende Teil kann nicht uebernommen werden:
-    // ---------------------------------------------------------
-    // Eine Fake-Id zum Test:
-    char testRFIDCode[4] = {'a','b','c','d'};
-    Registration reg;
-    
-    int registeredTagCountBefore = reg.countTags();
-    
-    // Registrierung der Fake-Id
-    reg.registerPerson(testRFIDCode, 4);
-    
-    int registeredTagCountAfter = reg.countTags();
-    
-    // testResult kann bei einem erfolgreichen Test
-    // auf true gesetzt werden
-    
-    // Wenn die Anzahl der Registrierten Tags um eins hoeher ist als
-    // vorher gilt der Test als bestanden -> testResult = true;
-    if(registeredTagCountBefore + 1 == registeredTagCountAfter)
+    if(time-timing=<100&timing-time=<100)
     {
         testResult = true;
     }
+    else
+    {
+        testResult = false;
+    }
     
     
-    // Bis hierhin ist eine eigene Implementierung erforderlich
-    // Nicht vergessen:  testResult = true; bei erfolgreichem Test
-    // ---------------------------------------------------------
-    
-    // Der folgende Teil erzeugt eine verwendbare Ausgabe
-    // Diese kann direkt in das Wiki kopiert werden
     APITest::printTestResult(testResult,
-                             "Anmeldung eines Studierenden",
-                             "Paul Frost",
-                             "Anmeldung der Studierenden Prototyp A02, Pruefung der Anzahl von Registrierungen",
+                             "Die Kontrolle des Programms",
+                             "Lie Yuan",
+                             "Prototyp A03, Pruefung die Genauigkeit der Funktion millis()",
                              "testDefinitionen.h");
 }
 
@@ -56,8 +36,7 @@ void testAnmeldung(){ // Name frei waehlbar
 void runTests(){
     APITest::printTestStartHeader(); // Nicht modifizieren
     
-    // Hier sollen die eigenen Tests hinzugefuegt werden
-    testAnmeldung();
+       test();
     
     APITest::printTestEndFooter(); // Nicht modifizieren
 }
