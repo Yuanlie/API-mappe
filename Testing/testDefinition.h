@@ -10,7 +10,7 @@
 void test()
 {
     
-    double timing;//Diese Zeit ist der Wert von Funktion millis() beim Stoppen des Programm.
+    //double timing;Diese Zeit ist der Wert von Funktion millis() beim Stoppen des Programm.
     double time = 60000;//Diese 60000ms ist der Zwerk,dass millis() beim Stoppen des Programm wirklich 60000ms läuft.
 
     
